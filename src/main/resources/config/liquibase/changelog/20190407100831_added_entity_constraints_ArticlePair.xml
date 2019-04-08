@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ArticlePair.
+    -->
+    <changeSet id="20190407100831-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="from_article_id"
+                                 baseTableName="article_pair"
+                                 constraintName="fk_article_pair_from_article_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="article"/>
+
+        <addForeignKeyConstraint baseColumnNames="to_account_id"
+                                 baseTableName="article_pair"
+                                 constraintName="fk_article_pair_to_account_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="article"/>
+
+    </changeSet>
+</databaseChangeLog>
